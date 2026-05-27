@@ -2,7 +2,13 @@ produtos = {}
 
 for i in range(5):
     nome = input('digite o nome do produto:')
-    valor = float(input('digite o valor do produto:'))
+
+    while True:
+        try:
+            valor = float(input('digite o valor do produto:'))
+            break
+        except ValueError:
+            print('Valor inválido. Digite um número.')
 
     produtos[nome] = valor
 
